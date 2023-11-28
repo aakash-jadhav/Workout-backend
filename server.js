@@ -2,6 +2,7 @@ const express = require("express")
 require("dotenv").config()
 const mongoose = require("mongoose")
 const workoutRoutes = require("./routes/workout")
+const userRoutes = require("./routes/user")
 const cors = require("cors")
 //express app
 const app = express()
@@ -17,6 +18,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use("/api/workout", workoutRoutes)
+app.use("/api/user", userRoutes)
 
 //connect to database
 mongoose
